@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="OPLUS"
+      fetch="https://github.com/OnePlus-12-Development/"
+      sync-c="true"
+      sync-tags="false"
+      revision="lineage-21" />
+
+  <!-- MSM kernel -->
+  <project name="kernel_platform_msm-kernel" path="kernel_platform/msm-kernel" remote="OPLUS" >
+    <linkfile dest="kernel_platform/common/build.config.msm.pineapple" src="build.config.msm.pineapple"/>
+    <linkfile dest="kernel_platform/WORKSPACE" src="bazel.WORKSPACE"/>
+    <linkfile dest="kernel_platform/build_with_bazel.py" src="build_with_bazel.py"/>
+  </project>
+
+  <!-- Proprietary main devicetree
+  <project name="vendor_qcom_proprietary_devicetree" path="vendor/qcom/proprietary/devicetree" remote="OPLUS" >
+    <linkfile dest="kernel_platform/msm-kernel/arch/arm64/boot/dts/vendor" src="." />
+  </project> -->
+
+  <!-- Proprietary devicetree
+  <project name="vendor_qcom_proprietary_audio-devicetree" path="vendor/qcom/proprietary/audio-devicetree" remote="OPLUS" />
+  <project name="vendor_qcom_proprietary_bt-devicetree" path="vendor/qcom/proprietary/bt-devicetree" remote="OPLUS" />
+  <project name="vendor_qcom_proprietary_camera-devicetree" path="vendor/qcom/proprietary/camera-devicetree" remote="OPLUS" />
+  <project name="vendor_qcom_proprietary_data-devicetree" path="vendor/qcom/proprietary/data-devicetree" remote="OPLUS" />
+  <project name="vendor_qcom_proprietary_display-devicetree" path="vendor/qcom/proprietary/display-devicetree" remote="OPLUS" />
+  <project name="vendor_qcom_proprietary_eSE-devicetree" path="vendor/qcom/proprietary/eSE-devicetree" remote="OPLUS" />
+  <project name="vendor_qcom_proprietary_eva-devicetree" path="vendor/qcom/proprietary/eva-devicetree" remote="OPLUS" />
+  <project name="vendor_qcom_proprietary_graphics-devicetree" path="vendor/qcom/proprietary/graphics-devicetree" remote="OPLUS" />
+  <project name="vendor_qcom_proprietary_mm-devicetree" path="vendor/qcom/proprietary/mm-devicetree" remote="OPLUS" />
+  <project name="vendor_qcom_proprietary_mmrm-devicetree" path="vendor/qcom/proprietary/mmrm-devicetree" remote="OPLUS" />
+  <project name="vendor_qcom_proprietary_nfc-devicetree" path="vendor/qcom/proprietary/nfc-devicetree" remote="OPLUS" />
+  <project name="vendor_qcom_proprietary_video-devicetree" path="vendor/qcom/proprietary/video-devicetree" remote="OPLUS" />
+  <project name="vendor_qcom_proprietary_wlan-devicetree" path="vendor/qcom/proprietary/wlan-devicetree" remote="OPLUS" /> -->
+
+   <!-- audio-kernel -->
+  <project name="vendor_qcom_opensource_audio-kernel-ar" path="vendor/qcom/opensource/audio-kernel" remote="OPLUS" >
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/audio_kernel_vendor_board.mk" src="audio_kernel_vendor_board.mk"/>
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/audio_kernel_product_board.mk" src="audio_kernel_product_board.mk"/>
+  </project>
+
+  <!-- camera-kernel -->
+  <project name="vendor_qcom_opensource_camera-kernel" path="vendor/qcom/opensource/camera-kernel" remote="OPLUS" >
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/camera-kernel_product.mk" src="product.mk"/>
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/camera-kernel_board.mk" src="board.mk"/>
+  </project>
+
+  <!-- display-kernel -->
+  <project name="vendor_qcom_opensource_display-drivers" path="vendor/qcom/opensource/display-drivers" remote="OPLUS" >
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/display_driver_product.mk" src="display_driver_product.mk"/>
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/display_driver_board.mk" src="display_driver_board.mk"/>
+  </project>
+
+  <!-- graphics-kernel -->
+  <project name="vendor_qcom_opensource_graphics-kernel" path="vendor/qcom/opensource/graphics-kernel" remote="OPLUS" />
+
+  <!-- mmrm-driver -->
+  <project name="vendor_qcom_opensource_mmrm-driver" path="vendor/qcom/opensource/mmrm-driver" remote="OPLUS" >
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/mmrm_kernel_board.mk" src="mmrm_kernel_board.mk"/>
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/mmrm_kernel_product.mk" src="mmrm_kernel_product.mk"/>
+  </project>
+
+  <!-- <project name="vendor_qcom_opensource_mmrm-driver-test" path="vendor/qcom/opensource/mmrm-driver/test" remote="OPLUS" /> -->
+
+  <!-- mm-drivers -->
+  <project name="vendor_qcom_opensource_mm-drivers" path="vendor/qcom/opensource/mm-drivers" remote="OPLUS" >
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/mm_driver_board.mk" src="mm_driver_board.mk"/>
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/mm_driver_product.mk" src="mm_driver_product.mk"/>
+  </project>
+
+  <!-- securemsm-kernel -->
+  <project name="vendor_qcom_opensource_securemsm-kernel" path="vendor/qcom/opensource/securemsm-kernel" remote="OPLUS" >
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/mm_driver_board.mk" src="securemsm_kernel_vendor_board.mk"/>
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/securemsm_kernel_product_board.mk" src="securemsm_kernel_product_board.mk"/>
+  </project>
+
+  <!-- video-kernel -->
+  <project name="vendor_qcom_opensource_video-driver" path="vendor/qcom/opensource/video-driver" remote="OPLUS" >
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/video_kernel_board.mk" src="video_kernel_board.mk"/>
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/video_kernel_product.mk" src="video_kernel_product.mk"/>
+  </project>
+
+  <!-- dataipa -->
+  <project name="vendor_qcom_opensource_dataipa" path="vendor/qcom/opensource/dataipa" remote="OPLUS" >
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/dataipa_dlkm_vendor_board.mk" src="dataipa_dlkm_vendor_board.mk"/>
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/dataipa_dlkm_vendor_product.mk" src="dataipa_dlkm_vendor_product.mk"/>
+  </project>
+
+  <!-- datarmnet -->
+  <project name="vendor_qcom_opensource_datarmnet" path="vendor/qcom/opensource/datarmnet" remote="OPLUS" >
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/datarmnet_dlkm_vendor_board.mk" src="datarmnet_dlkm_vendor_board.mk"/>
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/datarmnet_dlkm_vendor_product.mk" src="datarmnet_dlkm_vendor_product.mk"/>
+  </project>
+
+  <!-- datarmnet-ext -->
+  <project name="vendor_qcom_opensource_datarmnet-ext" path="vendor/qcom/opensource/datarmnet-ext" remote="OPLUS" >
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/datarmnet_ext_dlkm_vendor_board.mk" src="datarmnet_ext_dlkm_vendor_board.mk"/>
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/datarmnet_ext_dlkm_vendor_product.mk" src="datarmnet_ext_dlkm_vendor_product.mk"/>
+  </project>
+
+  <!-- wlan -->
+  <project name="vendor_qcom_opensource_wlan_fw-api" path="vendor/qcom/opensource/wlan/fw-api" remote="OPLUS" />
+  <project name="vendor_qcom_opensource_wlan_platform" path="vendor/qcom/opensource/wlan/platform" remote="OPLUS" />
+  <project name="vendor_qcom_opensource_wlan_qca-wifi-host-cmn" path="vendor/qcom/opensource/wlan/qca-wifi-host-cmn" remote="OPLUS" />
+  <project name="vendor_qcom_opensource_wlan_qcacld-3.0" path="vendor/qcom/opensource/wlan/qcacld-3.0" remote="OPLUS" />
+
+  <!-- bt-kernel -->
+  <project name="vendor_qcom_opensource_bt-kernel" path="vendor/qcom/opensource/bt-kernel" remote="OPLUS" >
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/bt_kernel_vendor_board.mk" src="bt_kernel_vendor_board.mk"/>
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/bt_kernel_product_board.mk" src="bt_kernel_product_board.mk"/>
+  </project>
+
+  <!-- eva-kernel -->
+  <project name="vendor_qcom_opensource_eva-kernel" path="vendor/qcom/opensource/eva-kernel" remote="OPLUS"  >
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/eva_kernel_board.mk" src="eva_kernel_board.mk"/>
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/eva_kernel_product.mk" src="eva_kernel_product.mk"/>
+  </project>
+
+  <!-- touch-drivers -->
+  <project name="vendor_qcom_opensource_touch-drivers" path="vendor/qcom/opensource/touch-drivers" remote="OPLUS" >
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/touch_driver_board.mk" src="touch_driver_board.mk"/>
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/touch_driver_product.mk" src="touch_driver_product.mk"/>
+  </project>
+
+  <!-- nfc-st-driver -->
+  <project name="vendor_qcom_opensource_nfc-st-driver" path="vendor/qcom/opensource/nfc-st-driver" remote="OPLUS" >
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/nfc_kernel_dlkm_vendor_board.mk" src="nfc_kernel_dlkm_vendor_board.mk"/>
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/nfc_kernel_dlkm_vendor_product.mk" src="nfc_kernel_dlkm_vendor_product.mk"/>
+  </project>
+
+  <!-- nxp-driver -->
+  <project name="vendor_nxp_opensource_driver" path="vendor/nxp/opensource/driver" remote="OPLUS" >
+    <linkfile dest="vendor/nxp/defs/board-defs/vendor/nfc_kernel_dlkm_vendor_board.mk" src="nfc_kernel_dlkm_vendor_board.mk"/>
+    <linkfile dest="vendor/nxp/defs/product-defs/vendor/nfc_kernel_dlkm_vendor_product.mk" src="nfc_kernel_dlkm_vendor_product.mk"/>
+  </project>
+
+  <!-- eSE-driver -->
+  <project name="vendor_qcom_opensource_eSE-driver" path="vendor/qcom/opensource/eSE-driver" remote="OPLUS" >
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/ese_kernel_board.mk" src="ese_kernel_board.mk"/>
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/ese_kernel_product.mk" src="ese_kernel_product.mk"/>
+  </project>
+
+  <!-- explorer
+  <project name="vendor_oplus_kernel_explorer" path="vendor/oplus/kernel/explorer" remote="OPLUS" >
+    <linkfile dest="vendor/oplus/defs/board-defs/vendor/explorer_lahaina_board.mk" src="explorer_lahaina_board.mk"/>
+    <linkfile dest="vendor/oplus/defs/product-defs/vendor/explorer_lahaina_product.mk" src="explorer_lahaina_product.mk"/>
+  </project> -->
+
+  <!-- Build script -->
+  <project name="kernel_platform_script" path="kernel_platform/script" remote="OPLUS">
+    <linkfile dest="build.sh" src="build.sh"/>
+  </project>
+</manifest>
